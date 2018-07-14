@@ -5,7 +5,7 @@ mod outermost {
 
     pub mod inside {
         pub fn inner_function() {
-            
+            ::outermost::middle_secret_function(); // this is okay
         }
 
         fn secret_function() {}
