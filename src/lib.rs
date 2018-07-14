@@ -3,17 +3,19 @@ mod outermost {
 
     fn middle_secret_function() {}
 
-    mod inside {
-        pub fn inner_function() {}
+    pub mod inside {
+        pub fn inner_function() {
+            
+        }
 
         fn secret_function() {}
     }
 }
 
 fn try_me() {
-    outermost::middle_function(); // this is okay
+    outermost::middle_function(); // public
     outermost::middle_secret_function(); // private
-    outermost::inside::inner_function(); // private
+    outermost::inside::inner_function(); // public
     outermost::inside::secret_function(); // private
 }
 
